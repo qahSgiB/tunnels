@@ -78,13 +78,15 @@ endif()
 target_include_directories(healpix PUBLIC "${libraries_path}/healpix/include")
 
 ## Dawn
-# TODO: make Vulkan optional
 add_library(dawn INTERFACE)
 
 if(NOT EMSCRIPTEN)
+    # TODO: is this necessary ?
     find_package(Vulkan)
-    target_include_directories(dawn INTERFACE "${Vulkan_INCLUDE_DIRS}")
-    target_link_libraries(dawn INTERFACE ${Vulkan_LIBRARY})
+    if(Vulkan_FOUND)
+        target_include_directories(dawn INTERFACE "${Vulkan_INCLUDE_DIRS}")
+        target_link_libraries(dawn INTERFACE ${Vulkan_LIBRARY})
+    endif()
 
     target_include_directories(dawn INTERFACE "${libraries_path}/dawn/inc")
     # target_link_directories(dawn INTERFACE "${CMAKE_CURRENT_LIST_DIR}/dawn/lib")

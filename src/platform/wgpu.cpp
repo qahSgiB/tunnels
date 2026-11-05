@@ -27,8 +27,8 @@
         #define DEFAULT_BACKEND_TYPE WGPUBackendType_Metal
     #elif defined(DAWN_ENABLE_BACKEND_VULKAN)
         #define DEFAULT_BACKEND_TYPE WGPUBackendType_Vulkan
-    #elif defined(DAWN_ENABLE_BACKEND_OPENGLES)
-        #define DEFAULT_BACKEND_TYPE WGPUBackendType_OpenGLES
+    #elif defined(DAWN_ENABLE_BACKEND_OPENGL)
+        #define DEFAULT_BACKEND_TYPE WGPUBackendType_OpenGL
     #elif defined(DAWN_ENABLE_BACKEND_DESKTOP_GL)
         #define DEFAULT_BACKEND_TYPE WGPUBackendType_OpenGL
     #endif
