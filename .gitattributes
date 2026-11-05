@@ -1,3 +1,6 @@
+* text=auto
+
+
 libraries/dawn/lib/win/x64/Debug/dawn_proc.dll.lib filter=lfs diff=lfs merge=lfs -text
 libraries/dawn/lib/win/x64/Debug/dawn_wire.dll filter=lfs diff=lfs merge=lfs -text
 libraries/dawn/lib/win/x64/Debug/dawn_wire.dll.lib filter=lfs diff=lfs merge=lfs -text
