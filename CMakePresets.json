@@ -1,0 +1,52 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/build/${presetName}"
+        },
+        {
+            "name": "debug-x64",
+            "inherits": ["default"],
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+        },
+        {
+            "name": "debug-emscripten",
+            "inherits": ["default"],
+            "toolchainFile": "${sourceDir}/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+        },
+        {
+            "name": "release-x64",
+            "inherits": ["default"],
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+        },
+        {
+            "name": "release-emscripten",
+            "inherits": ["default"],
+            "toolchainFile": "${sourceDir}/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug-x64",
+            "configurePreset": "debug-x64"
+        },
+        {
+            "name": "debug-emscripten",
+            "configurePreset": "debug-emscripten"
+        },
+        {
+            "name": "release-x64",
+            "configurePreset": "release-x64"
+        },
+        {
+            "name": "release-emscripten",
+            "configurePreset": "release-emscripten"
+        }
+    ]
+}
