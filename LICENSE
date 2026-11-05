@@ -1,4 +1,4 @@
-This project is licensed under GNU GPLv2 license (for full text see below), expect for following directories:
+This project is licensed under GNU GPLv2 license (for full text see below), expect for following directories which have separate licenses:
  - libraries/dawn - for license see libraries/dawn/LICENSE
  - libraries/glfw - for license see libraries/glfw/LICENSE.md (zlib/libpng)
  - libraries/glm - for license see libraries/glm/copying.txt (MIT or The Happy Bunny)
